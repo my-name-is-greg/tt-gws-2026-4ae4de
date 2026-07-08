@@ -255,6 +255,7 @@
       <a href="#security">Security</a>
       <a href="#rollout">Rollout</a>
       <a href="#evidence">Evidence</a>
+      <a href="#loop">Improvement</a>
       <a href="#bottomline">Bottom Line</a>
       <a href="#references">References</a>
     </div>
@@ -664,7 +665,7 @@
       <ul style="font-size:17px; padding-left:22px; margin:16px 0 0; max-width:68ch">
         <li style="margin-bottom:8px"><b>≥60% weekly active usage</b> across the cohort (Admin Console telemetry)</li>
         <li style="margin-bottom:8px"><b>≥3 client-ready deliverables</b> shipped through the AI workflow</li>
-        <li style="margin-bottom:8px"><b>≥90 minutes/week</b> self-reported time savings in pulse surveys</li>
+        <li style="margin-bottom:8px"><b>≥30% faster cycle times</b> from brief to client-ready deliverable, computed automatically from Drive and CRM timestamps against the historical baseline</li>
         <li style="margin-bottom:8px"><b>Zero brand or security incidents</b> in outbound work</li>
       </ul>
       <p class="muted" style="margin:16px 0 0">Hit the gates and the expansion wave is already planned. Miss them and we stop, diagnose, and re-scope. A plan you can exit is a plan you can trust.</p>
@@ -711,7 +712,7 @@
         <ul>
           <li>Professionals using generative AI produced 59% more business documents per hour<sup><a href="#ref-13">13</a></sup></li>
           <li>All adoption telemetry is native: the Admin Console tracks active users, per-app usage, and thresholds<sup><a href="#ref-14">14</a></sup></li>
-          <li>Value formula: People × Hours saved × Frequency × Hourly rate</li>
+          <li>Value formula: People × Hours saved × Frequency × Hourly rate, with hours saved computed from cycle-time telemetry rather than self-reporting</li>
         </ul>
       </div>
       <div class="card">
@@ -726,7 +727,54 @@
   </div>
 </section>
 
-<section id="bottomline">
+<section id="loop">
+  <div class="wrap">
+    <span class="eyebrow">Weeks 9 and Beyond</span>
+    <h2>It keeps getting better.</h2>
+    <p class="lede muted">Once the pilot proves out, the same stack that does the work starts improving the work. Nothing in this section acts on its own; every mechanism runs the same loop, and the loop is the point.</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:36px 0 8px; font-size:15.5px; font-weight:700">
+      <span style="border:1px solid var(--hairline); border-radius:999px; padding:10px 20px; background:var(--band)">Gemini proposes</span>
+      <span class="muted" aria-hidden="true">→</span>
+      <span style="border:2px solid var(--accent); border-radius:999px; padding:10px 20px; color:var(--accent-ink)">A named human reviews</span>
+      <span class="muted" aria-hidden="true">→</span>
+      <span style="border:1px solid var(--hairline); border-radius:999px; padding:10px 20px; background:var(--band)">The change ships, versioned</span>
+      <span class="muted" aria-hidden="true">→</span>
+      <span style="border:1px solid var(--hairline); border-radius:999px; padding:10px 20px; background:var(--band)">The next cycle measures it</span>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <h3>A library that learns</h3>
+        <p>Each quarter, Gemini reviews prompt-library usage logs and proposes changes: retire what nobody uses, promote what spreads on its own, and draft templates for the questions people keep asking without one. Champions approve every change.</p>
+      </div>
+      <div class="card">
+        <h3>Early-warning telemetry</h3>
+        <p>Adoption data flows to BigQuery on a schedule, and Gemini flags the patterns nobody scans for: a division quietly plateauing, a feature abandoned after first use, an office outperforming its peers whose habits are worth copying. The intervention playbook gets its signal before the quarter ends, not after.</p>
+      </div>
+      <div class="card">
+        <h3>Win-pattern mining</h3>
+        <p>Pitch decks and their outcomes already live in Drive and the CRM. Gemini looks for what winning pitches share and proposes template and Gem updates, versioned and human-approved. The playbooks get sharper with every closed deal.</p>
+      </div>
+      <div class="card">
+        <h3>Drift review</h3>
+        <p>Brand voice evolves; Gems only evolve if someone updates them. Scheduled evaluations test each Gem against current guidelines and recently flagged outputs, then propose refinements. The DLP filters get the same treatment, so they stay sharp instead of noisy.</p>
+      </div>
+      <div class="card">
+        <h3>The "what are we missing" engine</h3>
+        <p>Standing background research runs deliver a Monday brief per division: athletes whose streaming and social velocity just inflected, sponsorship categories heating up by region, anomalies nobody thought to query. Analysts validate before anything moves.</p>
+      </div>
+      <div class="card">
+        <h3>Friction mining</h3>
+        <p>Office-hours questions, Meet notes, and support threads repeat themselves. A monthly synthesis turns them into the next training topic and the next agenda. The enablement program improves itself.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:36px" class="muted">The measuring itself is automated, too. Baselines come from historical Drive and CRM metadata, cycle times are computed from timestamps, and the only thing we ever ask a human is whether the work got better. <b style="color:var(--ink)">Spending hours reporting on saved hours would defeat the purpose.</b> All of it is aggregated at team level and never used to score individuals, which is what makes the no-shame onboarding believable.</p>
+  </div>
+</section>
+
+<section id="bottomline" class="band">
   <div class="wrap" style="text-align:center">
     <span class="eyebrow" style="display:block">The Bottom Line</span>
     <h2 style="max-width:22em; margin:0 auto 20px">Not new software. A restructuring of where the hours go.</h2>
@@ -757,7 +805,7 @@
   </div>
 </section>
 
-<section id="references" class="refs band">
+<section id="references" class="refs">
   <div class="wrap">
     <span class="eyebrow">References</span>
     <h2>Sources.</h2>
@@ -829,6 +877,7 @@
   // Rollout stepper
   var phases = [
     ["Workspace and data-readiness audit: the pilot division's archive must be digitized, organized, and permission-clean before anything is grounded on it",
+     "Efficiency baselines computed automatically from historical Drive and CRM metadata, with no surveys involved",
      "Admin Console configuration: DLP protocols and brand identity filters",
      "THE·TEAM master themes locked in Slides; pilot cohort selected, first champions enlisted"],
     ["Pilot NotebookLM knowledge base built from the audited archive (e.g., sponsorship precedents for Rights Sales)",
@@ -837,7 +886,7 @@
     ["25–50 person pilot goes live in one US division. Rights Sales is the strongest candidate: high deal velocity, measurable output",
      "Weekly office hours and champion floor support; telemetry running from day one",
      "Success gates actively tracked (see The First Yes below)"],
-    ["KPI readout against the success gates, using telemetry and pulse surveys instead of anecdotes",
+    ["KPI readout against the success gates, computed from telemetry rather than collected from surveys",
      "Gems, prompts, and training refined from pilot feedback",
      "Leadership decision gate: greenlight the US expansion wave with a sequenced plan"]
   ];
