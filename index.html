@@ -141,6 +141,7 @@
     border-top: 1px solid var(--hairline); padding-top: 12px; font-size: 16px; margin-top: auto;
   }
   .value b { color: var(--ink); }
+  .trad-foot { color: var(--muted); }
   .hidden { display: none; }
 
   /* ---------- matrix ---------- */
@@ -319,7 +320,8 @@
           <div class="statelabel">With Google AI</div>
           <p>A custom <span class="g">Talent Representation Gem</span> linked to <span class="g">NotebookLM</span> queries the agency's secure contract archive and returns a synthesized, citation-backed report on performance escalators in comparable West Coast markets — in minutes.</p>
         </div>
-        <div class="value"><b>Value:</b> three weeks of analyst work becomes three minutes. Saved time goes to player care and the relationships that keep athletes from leaving.</div>
+        <div class="value trad-foot"><b>Where the hours go:</b> weeks of skilled analysis spent assembling data — deep expertise pointed at compilation instead of the negotiation itself.</div>
+        <div class="value ai-foot hidden"><b>Value:</b> three weeks of analyst work becomes three minutes. Saved time goes to player care and the relationships that keep athletes from leaving.</div>
       </div>
 
       <div class="scenario" data-scenario>
@@ -342,7 +344,8 @@
           <div class="statelabel">With Google AI</div>
           <p><span class="g">Gemini in Slides</span>, backed by <span class="g">Connected Sheets + BigQuery</span>, turns viewership metrics, Western New York fan demographics, and the target brand's KPIs into a structured 20-slide deck — locked to THE·TEAM master templates.</p>
         </div>
-        <div class="value"><b>Value:</b> concept to client-ready pitch in one afternoon. Designers freed for premium creative. No off-brand deck ever reaches a sponsor.</div>
+        <div class="value trad-foot"><b>Where the hours go:</b> a week of waiting and hand-checking sits between a great idea and a great pitch — while the prospect's attention is at its hottest.</div>
+        <div class="value ai-foot hidden"><b>Value:</b> concept to client-ready pitch in one afternoon. Designers freed for premium creative. No off-brand deck ever reaches a sponsor.</div>
       </div>
 
       <div class="scenario" data-scenario>
@@ -365,7 +368,8 @@
           <div class="statelabel">With Google AI</div>
           <p>A specialized <span class="g">Laundry Service Gem</span>, pre-trained on the sponsor's voice and the agency's compliance rules, generates ten platform-native variations instantly — off-brand language filtered out by design. <span class="g">Google Vids</span> turns approved concepts into short-form video without leaving Workspace.</p>
         </div>
-        <div class="value"><b>Value:</b> first-mover advantage before competitors schedule a brainstorm, with zero-defect brand safety at full speed.</div>
+        <div class="value trad-foot"><b>Where the hours go:</b> sharp creative instincts wait in the approval queue while the cultural moment they spotted first passes by.</div>
+        <div class="value ai-foot hidden"><b>Value:</b> first-mover advantage before competitors schedule a brainstorm, with zero-defect brand safety at full speed.</div>
       </div>
 
       <div class="scenario" data-scenario>
@@ -387,7 +391,8 @@
           <div class="statelabel">With Google AI</div>
           <p><span class="g">Gemini Spark</span><sup><a href="#ref-13">13</a></sup> works 24/7 in the background — converting Meet discussions into action points, flagging budget variances, holding multi-step workflows for human approval. <span class="g">Gemini in AppSheet</span> lets field teams in 70 cities build no-code mobile apps by describing the process in plain language.</p>
         </div>
-        <div class="value"><b>Value:</b> ~105 minutes reclaimed per person per week<sup><a href="#ref-4">4</a></sup>; drafting tasks ~40% faster<sup><a href="#ref-6">6</a></sup>. Ops managers become strategists, not trackers.</div>
+        <div class="value trad-foot"><b>Where the hours go:</b> a skilled coordinator's week absorbed by status-chasing — work that keeps the project alive but never moves it forward.</div>
+        <div class="value ai-foot hidden"><b>Value:</b> ~105 minutes reclaimed per person per week<sup><a href="#ref-4">4</a></sup>; drafting tasks ~40% faster<sup><a href="#ref-6">6</a></sup>. Ops managers become strategists, not trackers.</div>
       </div>
 
       <div class="scenario" data-scenario>
@@ -409,7 +414,8 @@
           <div class="statelabel">With Google AI</div>
           <p><span class="g">Gemini across Workspace</span> summarizes months of correspondence instantly, drafts personalized client emails, and builds proposal structures in Docs by pulling precise clauses from previously successful contracts.</p>
         </div>
-        <div class="value"><b>Value:</b> faster response to high-value leads, absolute consistency, and no critical detail falling through the cracks.</div>
+        <div class="value trad-foot"><b>Where the hours go:</b> preparation the client never sees — time spent reconstructing context that could be spent deepening the relationship.</div>
+        <div class="value ai-foot hidden"><b>Value:</b> faster response to high-value leads, absolute consistency, and no critical detail falling through the cracks.</div>
       </div>
 
       <div class="scenario" data-scenario>
@@ -431,7 +437,8 @@
           <div class="statelabel">With Google AI</div>
           <p><span class="g">Gemini</span> synthesizes massive datasets in seconds and continuously scans the knowledge base across 28 countries — search trends, streaming velocity, social sentiment — to surface emerging talent before rival agencies bid.</p>
         </div>
-        <div class="value"><b>Value:</b> the agency moves from reactive to predictive, with first-mover advantage on emerging talent and sponsorship categories.</div>
+        <div class="value trad-foot"><b>Where the hours go:</b> rigorous research that's accurate on arrival — aimed at a market that has already moved on.</div>
+        <div class="value ai-foot hidden"><b>Value:</b> the agency moves from reactive to predictive, with first-mover advantage on emerging talent and sponsorship categories.</div>
       </div>
 
     </div>
@@ -736,6 +743,8 @@
     var buttons = card.querySelectorAll(".seg button");
     var trad = card.querySelector(".trad-view");
     var ai = card.querySelector(".ai-view");
+    var tradFoot = card.querySelector(".trad-foot");
+    var aiFoot = card.querySelector(".ai-foot");
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
         var mode = btn.getAttribute("data-mode");
@@ -743,6 +752,8 @@
         card.classList.toggle("ai", mode === "ai");
         trad.classList.toggle("hidden", mode === "ai");
         ai.classList.toggle("hidden", mode !== "ai");
+        tradFoot.classList.toggle("hidden", mode === "ai");
+        aiFoot.classList.toggle("hidden", mode !== "ai");
       });
     });
   });
